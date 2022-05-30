@@ -59,7 +59,7 @@ if user in users.keys() and password in users.get(user):
             "There are", len(text.split()), "words in the selected text.", "\n",
             "There are", len(re.findall(r'\s([A-Z]\w+)', text)), "titlecase words.", "\n",
             "There are", len(re.findall(r'([A-Z][A-Z]+)', text)), "uppercase words.", "\n",
-            "There are",
+            "There are", len(re.findall(r'([a-z][a-z]\w+)', text)), "lowercase words", "\n",
             )
             break
     else:

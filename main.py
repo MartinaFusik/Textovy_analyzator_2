@@ -37,7 +37,7 @@ users = {"bob": "123", "ann": "pass123", "mike": "password123", "liz": "pass123"
 
 # pomoc
 oddelovac_1 = "----------------------------------------"
-
+import re
 # přihlášení
 user = input("username: ")
 password = input("password: ")
@@ -57,6 +57,9 @@ if user in users.keys() and password in users.get(user):
             print(
             oddelovac_1, "\n",
             "There are", len(text.split()), "words in the selected text.", "\n",
+            "There are", len(re.findall(r'\s([A-Z]\w+)', text)), "titlecase words.", "\n",
+            "There are", len(re.findall(r'([A-Z][A-Z]+)', text)), "uppercase words.", "\n",
+            "There are",
             )
             break
     else:

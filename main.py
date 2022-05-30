@@ -37,4 +37,12 @@ users = {"bob":"123", "ann":"pass123", "mike":"password123", "liz":"pass123"}
 
 #přihlášení
 user = input("username: ")
-password = input("password")
+password = input("password: ")
+
+if user in users.keys() and password in users.get(user):
+    print(
+        "Welcome to the app,", user, "\n",
+        "We have 3 texts to be analyzed."
+    )
+else:
+    print("unregistered user, terminating the program...")

@@ -50,11 +50,14 @@ if user in users.keys() and password in users.get(user):
         "We have 3 texts to be analyzed.", "\n",
         oddelovac_1,
     )
-    text_number = input("Enter a number btw. 1 and 3 to selecst: ")
-    edit_text_number = int(text_number) - 1
+    text_number: str = input("Enter a number btw. 1 and 3 to selecst: ")
+    edit_text_number: int = int(text_number) - 1
     for index, text in (enumerate(TEXTS)):
         if edit_text_number == index:
-            print(":-)")
+            print(
+            oddelovac_1, "\n",
+            "There are", len(text.split()), "words in the selected text.", "\n",
+            )
             break
     else:
         print("wrong input, terminating the program...")

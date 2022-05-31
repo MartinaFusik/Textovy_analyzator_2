@@ -1,10 +1,11 @@
-import re
+
 """
 projekt_1.py: první project do Engeto Online Python Akademie
 author: Martina Fúsiková
 email: martina.fusikova@gmail.com
 discord: Martina_F #2319
 """
+import re
 TEXTS = ['''
 Situated about 10 miles west of Kemmerer,
 Fossil Butte is a ruggedly impressive
@@ -80,10 +81,10 @@ if user in users.keys() and password in users.get(user):
                 "LEN|", mezera, "OCCURENCES", mezera, "|NR."
             )
             #délka slov
-            for pozice, slovo in enumerate(split_text,1):
+            for pozice, slovo in enumerate(split_text, 1):
                 print(
                     oddelovac_1, "\n",
-                    f"{(pozice):>2} | {(hvezda) * (len(slovo)): <14} |{len(slovo)}"
+                    f"{pozice:>2} | {hvezda * (len(slovo)): <14} |{len(slovo)}"
                     )
 
             break

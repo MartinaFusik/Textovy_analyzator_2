@@ -54,13 +54,16 @@ if user in users.keys() and password in users.get(user):
     edit_text_number: int = int(text_number) - 1
     for index, text in (enumerate(TEXTS)):
         if edit_text_number == index:
+            result_sum = (re.findall(r'([0-9]+)', text))
+            results = list(map(int, result_sum))
             print(
             oddelovac_1, "\n",
             "There are", len(text.split()), "words in the selected text.", "\n",
             "There are", len(re.findall(r'\s([A-Z]\w+)', text)), "titlecase words.", "\n",
             "There are", len(re.findall(r'([A-Z][A-Z]+)', text)), "uppercase words.", "\n",
             "There are", len(re.findall(r'\s([a-z][a-z]+)', text)), "lowercase words", "\n",
-            "There are", len(re.findall(r'([0-9]+)', text)), "numeric string", "\n",
+            "There are", len(result_sum), "numeric string", "\n",
+            "The sum of all the numbers", (sum(results))
             )
             break
     else:

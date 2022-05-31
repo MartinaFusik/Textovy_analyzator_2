@@ -31,13 +31,13 @@ other freshwater genera and herring similar to those
 in modern oceans. Other fish such as paddlefish,
 garpike and stingray are also present.'''
          ]
-
+import re
 # seznam uživatelů
 users = {"bob": "123", "ann": "pass123", "mike": "password123", "liz": "pass123"}
 
-# pomoc
+# pomocne oddelovace
 oddelovac_1 = "----------------------------------------"
-import re
+
 # přihlášení
 user = input("username: ")
 password = input("password: ")
@@ -54,16 +54,26 @@ if user in users.keys() and password in users.get(user):
     edit_text_number: int = int(text_number) - 1
     for index, text in (enumerate(TEXTS)):
         if edit_text_number == index:
+            #numeric string
             result_sum = (re.findall(r'([0-9]+)', text))
+            # sum of all numbers
             results = list(map(int, result_sum))
+            #titlecase words
+            titlecase = (re.findall(r'\s([A-Z]\w+)', text))
+            #uppercase words
+            uppercase = (re.findall(r'([A-Z][A-Z]+)', text))
+            #lowercase words
+            lowercase = (re.findall(r'\s([a-z][a-z]+)', text))
+
             print(
             oddelovac_1, "\n",
             "There are", len(text.split()), "words in the selected text.", "\n",
-            "There are", len(re.findall(r'\s([A-Z]\w+)', text)), "titlecase words.", "\n",
-            "There are", len(re.findall(r'([A-Z][A-Z]+)', text)), "uppercase words.", "\n",
-            "There are", len(re.findall(r'\s([a-z][a-z]+)', text)), "lowercase words", "\n",
+            "There are", len(titlecase), "titlecase words.", "\n",
+            "There are", len(uppercase), "uppercase words.", "\n",
+            "There are", len(lowercase), "lowercase words", "\n",
             "There are", len(result_sum), "numeric string", "\n",
-            "The sum of all the numbers", (sum(results))
+            "The sum of all the numbers", (sum(results)), "\n",
+            oddelovac_1
             )
             break
     else:

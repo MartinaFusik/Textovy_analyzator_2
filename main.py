@@ -1,5 +1,6 @@
+import re
 """
-projekt_1.py: první projekt do Engeto Online Python Akademie
+projekt_1.py: první project do Engeto Online Python Akademie
 author: Martina Fúsiková
 email: martina.fusikova@gmail.com
 discord: Martina_F #2319
@@ -31,18 +32,18 @@ other freshwater genera and herring similar to those
 in modern oceans. Other fish such as paddlefish,
 garpike and stingray are also present.'''
          ]
-import re
+
 # seznam uživatelů
 users = {"bob": "123", "ann": "pass123", "mike": "password123", "liz": "pass123"}
 
 # pomocne oddelovace
 oddelovac_1 = "----------------------------------------"
-
+mezera = " "
 # přihlášení
 user = input("username: ")
 password = input("password: ")
 
-#vyhodnocení uzivatele
+# vyhodnocení uzivatele
 if user in users.keys() and password in users.get(user):
     print(
         "", oddelovac_1, "\n",
@@ -54,26 +55,30 @@ if user in users.keys() and password in users.get(user):
     edit_text_number: int = int(text_number) - 1
     for index, text in (enumerate(TEXTS)):
         if edit_text_number == index:
-            #numeric string
-            result_sum = (re.findall(r'([0-9]+)', text))
+            # numeric string
+            result_sum = (re.findall(r"([0-9]+)", text))
             # sum of all numbers
             results = list(map(int, result_sum))
-            #titlecase words
-            titlecase = (re.findall(r'\s([A-Z]\w+)', text))
-            #uppercase words
-            uppercase = (re.findall(r'([A-Z][A-Z]+)', text))
-            #lowercase words
-            lowercase = (re.findall(r'\s([a-z][a-z]+)', text))
+            # titlecase words
+            titlecase = (re.findall(r"\s([A-Z]\w+)", text))
+            # uppercase words
+            uppercase = (re.findall(r"([A-Z][A-Z]+)", text))
+            # lowercase words
+            lowercase = (re.findall(r"\s([a-z][a-z]+)", text))
 
             print(
-            oddelovac_1, "\n",
-            "There are", len(text.split()), "words in the selected text.", "\n",
-            "There are", len(titlecase), "titlecase words.", "\n",
-            "There are", len(uppercase), "uppercase words.", "\n",
-            "There are", len(lowercase), "lowercase words", "\n",
-            "There are", len(result_sum), "numeric string", "\n",
-            "The sum of all the numbers", (sum(results)), "\n",
-            oddelovac_1
+                oddelovac_1, "\n",
+                "There are", len(text.split()), "words in the selected text.", "\n",
+                "There are", len(titlecase), "titlecase words.", "\n",
+                "There are", len(uppercase), "uppercase words.", "\n",
+                "There are", len(lowercase), "lowercase words", "\n",
+                "There are", len(result_sum), "numeric string", "\n",
+                "The sum of all the numbers", (sum(results)), "\n",
+                oddelovac_1
+            )
+            print(
+                " ", "LEN|", mezera, "OCCURENCES", mezera, "|NR.", "\n",
+                oddelovac_1
             )
             break
     else:

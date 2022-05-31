@@ -46,7 +46,7 @@ user = input("username: ")
 password = input("password: ")
 
 # vyhodnocení uzivatele
-if user in users.keys() and password in users.get(user):
+if user in users.keys() and password == users.get(user):
     print(
         "", oddelovac_1, "\n",
         "Welcome to the app,", user, "\n",
@@ -81,7 +81,7 @@ if user in users.keys() and password in users.get(user):
                 "LEN|", mezera, "OCCURENCES", mezera, "|NR."
             )
             #délka slov
-            for pozice, slovo in enumerate(split_text, 1):
+            for pozice, slovo in enumerate(split_text[:11], 1):
                 print(
                     oddelovac_1, "\n",
                     f"{pozice:>2} | {hvezda * (len(slovo)): <14} |{len(slovo)}"

@@ -39,6 +39,7 @@ users = {"bob": "123", "ann": "pass123", "mike": "password123", "liz": "pass123"
 # pomocne oddelovace
 oddelovac_1 = "----------------------------------------"
 mezera = " "
+hvezda = "*"
 # přihlášení
 user = input("username: ")
 password = input("password: ")
@@ -65,21 +66,26 @@ if user in users.keys() and password in users.get(user):
             uppercase = (re.findall(r"([A-Z][A-Z]+)", text))
             # lowercase words
             lowercase = (re.findall(r"\s([a-z][a-z]+)", text))
+            split_text = (text.split())
 
             print(
                 oddelovac_1, "\n",
-                "There are", len(text.split()), "words in the selected text.", "\n",
+                "There are", len(split_text), "words in the selected text.", "\n",
                 "There are", len(titlecase), "titlecase words.", "\n",
                 "There are", len(uppercase), "uppercase words.", "\n",
                 "There are", len(lowercase), "lowercase words", "\n",
                 "There are", len(result_sum), "numeric string", "\n",
                 "The sum of all the numbers", (sum(results)), "\n",
-                oddelovac_1
+                oddelovac_1, "\n",
+                "LEN|", mezera, "OCCURENCES", mezera, "|NR."
             )
-            print(
-                " ", "LEN|", mezera, "OCCURENCES", mezera, "|NR.", "\n",
-                oddelovac_1
-            )
+            #délka slov
+            for pozice, slovo in enumerate(split_text,1):
+                print(
+                    oddelovac_1, "\n",
+                    f"{(pozice):>2} | {(hvezda) * (len(slovo)): <14} |{len(slovo)}"
+                    )
+
             break
     else:
         print("wrong input, terminating the program...")

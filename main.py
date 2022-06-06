@@ -61,7 +61,6 @@ if user in users.keys() and password == users.get(user):
             result_sum = (re.findall(r"([0-9]+\s)", text))
             # sum of all numbers
             results = list(map(int, result_sum))
-            print(results)
             # titlecase words
             titlecase = (re.findall(r"\s([A-Z]\w+)", text))
             # uppercase words
@@ -82,12 +81,12 @@ if user in users.keys() and password == users.get(user):
                 "LEN|", mezera, "OCCURENCES", mezera, "|NR."
             )
             #délka slov
-            for pozice, slovo in enumerate(split_text[:11], 1):
+            for pozice, slovo in enumerate(split_text, 1):
+                sum_slovo = len(slovo)
                 print(
-                    oddelovac_1, "\n",
-                    f"{pozice:>2} | {hvezda * (len(slovo)): <14} |{len(slovo)}"
-                    )
-
+            oddelovac_1, "\n",
+            f"{pozice:>2} | {hvezda * sum_slovo: <14} |{sum_slovo}"
+        )
             break
     else:
         print("wrong input, terminating the program...")

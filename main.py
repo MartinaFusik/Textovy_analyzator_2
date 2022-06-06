@@ -1,4 +1,3 @@
-
 """
 projekt_1.py: první project do Engeto Online Python Akademie
 author: Martina Fúsiková
@@ -6,6 +5,7 @@ email: martina.fusikova@gmail.com
 discord: Martina_F #2319
 """
 import re
+
 TEXTS = ['''
 Situated about 10 miles west of Kemmerer,
 Fossil Butte is a ruggedly impressive
@@ -80,13 +80,13 @@ if user in users.keys() and password == users.get(user):
                 oddelovac_1, "\n",
                 "LEN|", mezera, "OCCURENCES", mezera, "|NR."
             )
-            #délka slov
+            # délka slov
             for pozice, slovo in enumerate(split_text, 1):
                 sum_slovo = len(slovo)
                 print(
-            oddelovac_1, "\n",
-            f"{pozice:>2} | {hvezda * sum_slovo: <14} |{sum_slovo}"
-        )
+                    oddelovac_1, "\n",
+                    f"{pozice:>2} | {hvezda * sum_slovo: <14} |{sum_slovo}"
+                )
             break
     else:
         print("wrong input, terminating the program...")

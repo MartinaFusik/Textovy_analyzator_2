@@ -58,9 +58,10 @@ if user in users.keys() and password == users.get(user):
     for index, text in (enumerate(TEXTS)):
         if edit_text_number == index:
             # numeric string
-            result_sum = (re.findall(r"([0-9]+)", text))
+            result_sum = (re.findall(r"([0-9]+\s)", text))
             # sum of all numbers
             results = list(map(int, result_sum))
+            print(results)
             # titlecase words
             titlecase = (re.findall(r"\s([A-Z]\w+)", text))
             # uppercase words

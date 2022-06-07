@@ -34,6 +34,14 @@ other freshwater genera and herring similar to those
 in modern oceans. Other fish such as paddlefish,
 garpike and stingray are also present.'''
          ]
+SYMBOLS = '.,:;'
+TEXTS_1 = []
+for element in TEXTS:
+    temp = ""
+    for ch in element:
+        if ch not in SYMBOLS:
+            temp += ch
+    TEXTS_1.append(temp)
 
 # seznam uživatelů
 users = {"bob": "123", "ann": "pass123", "mike": "password123", "liz": "pass123"}
@@ -54,9 +62,9 @@ if user in users.keys() and password == users.get(user):
         "We have 3 texts to be analyzed.", "\n",
         oddelovac_1,
     )
-    text_number: str = input("Enter a number btw. 1 and 3 to selecst: ")
+    text_number: str = input("Enter a number btw. 1 and 3 to select: ")
     edit_text_number: int = int(text_number) - 1
-    for index, text in (enumerate(TEXTS)):
+    for index, text in (enumerate(TEXTS_1)):
         if edit_text_number == index:
             # numeric string
             result_sum = (re.findall(r"([0-9]+\s)", text))
@@ -67,7 +75,7 @@ if user in users.keys() and password == users.get(user):
             # uppercase words
             uppercase = (re.findall(r"([A-Z][A-Z]+)", text))
             # lowercase words
-            lowercase = (re.findall(r"\s([a-z][a-z]+)", text))
+            lowercase = (re.findall(r"\s([a-z]+)", text))
             split_text = (text.split())
 
             print(
@@ -86,6 +94,7 @@ if user in users.keys() and password == users.get(user):
             sum_slovo = []
             for pozice, slovo in enumerate(split_text, 1):
                 sum_slovo.append(len(slovo))
+            print(sum_slovo)
             cislovka = range(1, len(sum_slovo))
             cislovka_list = []
             for (cislovka) in sorted(sum_slovo):

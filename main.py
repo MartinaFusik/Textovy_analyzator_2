@@ -79,7 +79,8 @@ if user in users.keys() and password == users.get(user):
                 "There are", len(result_sum), "numeric string", "\n",
                 "The sum of all the numbers", (sum(results)), "\n",
                 oddelovac_1, "\n",
-                "LEN|", mezera, "OCCURENCES", mezera, "|NR."
+                "LEN|", (2*mezera), "OCCURENCES", (2*mezera), "|NR.", "\n",
+                oddelovac_1
             )
             # délka slov
             sum_slovo = []
@@ -89,30 +90,9 @@ if user in users.keys() and password == users.get(user):
             cislovka_list = []
             for (cislovka) in sorted(sum_slovo):
                 cislovka_list.append(cislovka)
-                jednotlive_pocty =collections.Counter(cislovka_list)
-            print(jednotlive_pocty)
-            cislo_1 = sum_slovo.count(1)
-            print("1", "|", hvezda * cislo_1, "|", cislo_1)
-            cislo_2 = sum_slovo.count(2)
-            print("2", "|", hvezda * cislo_2, "|", cislo_2)
-            cislo_3 = sum_slovo.count(3)
-            print("3", "|", hvezda * cislo_3, "|", cislo_3)
-            cislo_4 = sum_slovo.count(4)
-            print("4", "|", hvezda * cislo_4, "|", cislo_4)
-            cislo_5 = sum_slovo.count(5)
-            print("5", "|", hvezda * cislo_5, "|", cislo_5)
-            cislo_6 = sum_slovo.count(6)
-            print("6", "|", hvezda * cislo_6, "|", cislo_6)
-            cislo_7 = sum_slovo.count(7)
-            print("7", "|", hvezda * cislo_7, "|", cislo_7)
-            cislo_8 = sum_slovo.count(8)
-            print("8", "|", hvezda * cislo_8, "|", cislo_8)
-            cislo_9 = sum_slovo.count(9)
-            print("9", "|", hvezda * cislo_9, "|", cislo_9)
-            cislo_10 = sum_slovo.count(10)
-            print("10", "|", hvezda * cislo_10, "|", cislo_10)
-            cislo_11 = sum_slovo.count(11)
-            print("11", "|", hvezda * cislo_11, "|", cislo_11)
+            jednotlive_pocty = collections.Counter(cislovka_list)
+            for key, value in sorted(jednotlive_pocty.items()):
+                print(f"{key:>3} | {(hvezda * value): <16} | {value}")
 
             break
     else:

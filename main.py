@@ -87,21 +87,20 @@ if user in users.keys() and password == users.get(user):
                 "There are", len(result_sum), "numeric string", "\n",
                 "The sum of all the numbers", (sum(results)), "\n",
                 oddelovac_1, "\n",
-                "LEN|", (2*mezera), "OCCURENCES", (2*mezera), "|NR.", "\n",
+                "LEN|", (3*mezera), "OCCURENCES", (3*mezera), "|NR.", "\n",
                 oddelovac_1
             )
             # délka slov
             sum_slovo = []
             for pozice, slovo in enumerate(split_text, 1):
                 sum_slovo.append(len(slovo))
-            print(sum_slovo)
             cislovka = range(1, len(sum_slovo))
             cislovka_list = []
             for (cislovka) in sorted(sum_slovo):
                 cislovka_list.append(cislovka)
             jednotlive_pocty = collections.Counter(cislovka_list)
             for key, value in sorted(jednotlive_pocty.items()):
-                print(f"{key:>3} | {(hvezda * value): <16} | {value}")
+                print(f"{key:>3} | {(hvezda * value): <18} | {value}")
 
             break
     else:
